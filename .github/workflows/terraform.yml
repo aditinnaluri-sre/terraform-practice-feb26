@@ -37,12 +37,6 @@ jobs:
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
         
-    - name: Create state bucket if not exists
-      run: |
-       gsutil ls gs://bkt-tfstate-00-tans 2>/dev/null || \
-       gsutil mb -p terraform-gcp-498312 -l europe-west3 gs://bkt-tfstate-00-tans
-       gsutil versioning set on gs://bkt-tfstate-00-tans
-
     - name: Terraform Init
       run: terraform init
 
