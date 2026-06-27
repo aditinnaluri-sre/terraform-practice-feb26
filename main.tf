@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "my-bucket" {
-  name     = "bkt-demo-0101-tans-1"
+  name     = "bkt-tfstate-00-tans"
   location = "europe-west3"
   project  = "terraform-gcp-498312"
   force_destroy = true
